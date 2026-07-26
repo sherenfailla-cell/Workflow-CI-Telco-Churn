@@ -73,7 +73,8 @@ jobs:
           IMAGE_NAME="${DOCKERHUB_USERNAME}/telco-churn-mlflow"
           mlflow models build-docker \
             --model-uri "runs:/${{ steps.latest_run.outputs.run_id }}/model" \
-            --name "${IMAGE_NAME}:${{ github.sha }}"
+            --name "${IMAGE_NAME}:${{ github.sha }}" \
+            --env-manager local
           docker tag "${IMAGE_NAME}:${{ github.sha }}" "${IMAGE_NAME}:latest"
 
       - name: Push Docker model image
