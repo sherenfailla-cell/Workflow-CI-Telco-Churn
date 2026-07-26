@@ -8,6 +8,9 @@ with `mlflow models build-docker` and pushes immutable commit and `latest` tags 
 
 - `MLProject/` — MLflow Project spec (`MLProject`, `conda.yaml`) + training script + preprocessed data
 - `.github/workflows/ci.yml` — CI pipeline: checkout → Python 3.12.7 → dependencies → retraining → artifact upload → MLflow Docker build → Docker Hub push
+- `MLProject/DockerHub.txt` — public image link and reproducible pull commands
+
+Public image: [`iqbalrahardjo/telco-churn-mlflow`](https://hub.docker.com/r/iqbalrahardjo/telco-churn-mlflow)
 
 Required GitHub Actions repository secrets for the Advanced pipeline:
 

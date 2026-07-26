@@ -1,0 +1,8 @@
+Docker image Kriteria 3 Advanced:
+https://hub.docker.com/r/iqbalrahardjo/telco-churn-mlflow
+
+Pull image:
+docker pull iqbalrahardjo/telco-churn-mlflow:latest
+
+Immutable tag:
+docker pull iqbalrahardjo/telco-churn-mlflow:2eba5b4
