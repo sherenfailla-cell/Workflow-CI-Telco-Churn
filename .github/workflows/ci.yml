@@ -1,0 +1,27 @@
+name: CI Retraining
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  retrain:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python 3.12.7
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12.7"
+
+      - name: Check Env
+        run: python --version
+
+      - name: Install dependencies
+        run: pip install mlflow==2.19.0 scikit-learn==1.5.2 pandas==2.2.3 numpy==2.1.3
+
+      - name: Run mlflow project
+        working-directory: MLProject
+        run: mlflow run . --env-manager=local
